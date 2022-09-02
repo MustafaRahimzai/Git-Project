@@ -5,9 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var expressLayouts = require('express-ejs-layouts')
 
-
-
-
+require('dotenv').config();
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -15,6 +13,9 @@ var loginRouter = require('./routes/login');
 var contactRouter = require('./routes/contact');
 
 
+//mongodb connections
+var mongoose = require('mongoose');
+mongoose.connect(process.env.DB_URL);
 
 var app = express();
 

@@ -1,1 +1,35 @@
-<h1>contact</h1>
+<h1>contact US</h1>
+
+
+<form action="/contact/addMsg" method="post">
+    <input type="text" name="name" id="name" placeholder="Name"><br>
+    <input type="text" name="surname" id="surname" placeholder="Surname"><br>
+    <input type="text" name="message" id="message" placeholder="Messgae"><br>
+    <input type="submit" value="Submit">
+</form>
+
+
+<h1>Messages</h1>
+
+
+
+<table style="border: 2px solid seagreen;width: 100%;border-collapse: collapse;">
+<tr>
+    <th style="border: 2px solid black;">Name</th>
+    <th style="border: 2px solid black;">SurName</th>
+    <th style="border: 2px solid black;">Message</th>
+</tr>
+
+<% Messages.forEach(function(Message){ %>
+
+    <tr>
+        <td style="border: 1px solid blueviolet;text-align: center;"><%- Message.name %></td>
+        <td style="border: 1px solid blueviolet;text-align: center;"><%- Message.surname %></td>
+        <td style="border: 1px solid blueviolet;text-align: center;"><%- Message.message %></td>
+    </tr>
+
+
+ <% }) %>
+
+
+</table>
